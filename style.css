@@ -149,3 +149,11 @@ footer {
 
 .hidden { display: none !important; }
 tr.hidden { display: none !important; }
+
+.search-hint {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    padding: 40px 20px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
