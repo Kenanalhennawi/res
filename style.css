@@ -67,12 +67,13 @@ header code {
 }
 
 .search-wrap {
+    position: relative;
     margin-bottom: 24px;
 }
 
 .search-wrap input {
     width: 100%;
-    padding: 14px 20px;
+    padding: 14px 50px 14px 20px;
     font-size: 1rem;
     border-radius: 12px;
     border: none;
@@ -83,6 +84,30 @@ header code {
 
 .search-wrap input::placeholder { color: #94a3b8; }
 .search-wrap input:focus { outline: 2px solid var(--fz-orange); }
+
+.clear-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.clear-btn:hover {
+    color: var(--fz-orange);
+    background: white;
+}
 
 .card {
     background: var(--glass-bg);
@@ -143,8 +168,13 @@ header code {
 footer {
     text-align: center;
     padding: 20px;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+footer strong {
+    color: var(--fz-orange);
+    text-shadow: 0 0 10px rgba(246, 136, 31, 0.5);
 }
 
 .hidden { display: none !important; }
