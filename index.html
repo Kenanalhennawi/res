@@ -12,8 +12,8 @@
     <div class="container">
         <header>
             <h1>RezGui <span class="highlight">Entries</span></h1>
-            <p class="subtitle">flydubai PSS Reservation GUI – Quick Reference</p>
-            <p class="help-note">Type <code>HELP/&lt;entry&gt;</code> for details (e.g. HELP/VFF, HELP/LBA, HELP/LBO)</p>
+            <p class="subtitle">flydubai PSS Reservation GUI – Complete Reference</p>
+            <p class="help-note">Type <code>HELP/&lt;entry&gt;</code> in RezGui for details. Examples: <code>HELP/VFF</code> <code>HELP/LBA</code> <code>HELP/LBO</code> <code>HELP/LSA</code> <code>HELP/LBI</code> <code>HELP/LNA</code> <code>HELP/LGA</code> <code>HELP/LBX</code> <code>HELP/A</code></p>
         </header>
 
         <div class="search-wrap">
@@ -21,36 +21,46 @@
         </div>
 
         <section class="card">
-            <h2>PNR Display</h2>
-            <p class="section-desc"><strong>*&lt;PNR&gt;</strong> – Retrieve PNR and display full itinerary. Works for GDS FZ Prime and Holiday PNRs.</p>
+            <h2>Introduction</h2>
+            <p class="section-desc">RezGui extends FZ schedules and PNR list display for Senior Commercial Management. Use cryptic entries to retrieve PNRs and lists. Supports GDS FZ Prime, Holiday PNRs, Codeshare, OTA, and Direct channel bookings.</p>
+        </section>
+
+        <section class="card">
+            <h2>PNR Display – Retrieve</h2>
+            <p class="section-desc"><strong>*&lt;PNR&gt;</strong> – Retrieve PNR and display complete itinerary with applicable follow-up entries. Works for GDS FZ Prime and Holiday PNRs.</p>
+            <p class="section-desc"><strong>PNR Header</strong> shows: Confirmation Number, Channel. Time Limit shown only if PNR has balance due.</p>
+        </section>
+
+        <section class="card">
+            <h2>PNR Display – Follow-up Entries</h2>
             <table class="ref-table">
                 <thead>
                     <tr><th>Entry</th><th>Description</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td><code>*ALL</code></td><td>Expand all sections (except Eticket, Charges, Payments)</td></tr>
-                    <tr><td><code>*AI</code></td><td>Travel Agency (expand collapsed)</td></tr>
-                    <tr><td><code>*MM</code></td><td>Frequent Flyer</td></tr>
-                    <tr><td><code>*SN</code></td><td>Special Name Requirement (contact, child/infant)</td></tr>
-                    <tr><td><code>*ST</code></td><td>Seat Data</td></tr>
-                    <tr><td><code>*SI</code></td><td>Services (SSRs)</td></tr>
-                    <tr><td><code>*SD</code></td><td>Staff details</td></tr>
-                    <tr><td><code>*AP</code></td><td>APIS Info</td></tr>
-                    <tr><td><code>*CM</code></td><td>Comments</td></tr>
-                    <tr><td><code>*FB</code></td><td>Fare basis (segment–passenger level)</td></tr>
-                    <tr><td><code>*R</code></td><td>Redisplay PNR</td></tr>
-                    <tr><td><code>*H</code></td><td>History display</td></tr>
-                    <tr><td><code>FE*</code></td><td>Eticket data (new screen)</td></tr>
-                    <tr><td><code>FE*&lt;serial no&gt;</code></td><td>Specific ticket by serial (after FE*)</td></tr>
-                    <tr><td><code>FE*&lt;ticketnum&gt;</code></td><td>Display by ticket number</td></tr>
-                    <tr><td><code>CV*</code></td><td>Charges (per pax-segment)</td></tr>
-                    <tr><td><code>FOP*</code></td><td>Payments</td></tr>
+                    <tr><td><code>*ALL</code></td><td>Expand all sections. Eticket, Charges, Payments open in new screen.</td></tr>
+                    <tr><td><code>*AI</code></td><td>Travel Agency. Collapsed by default if data available.</td></tr>
+                    <tr><td><code>*MM</code></td><td>Frequent Flyer. Collapsed if any pax has FFP ID.</td></tr>
+                    <tr><td><code>*SN</code></td><td>Special Name Requirement. Collapsed if contact (email, mobile, work, WhatsApp) or child/infant pax.</td></tr>
+                    <tr><td><code>*ST</code></td><td>Seat Data. Collapsed if any pax has seat assigned.</td></tr>
+                    <tr><td><code>*SI</code></td><td>Services (SSRs). Collapsed if any pax has active SSR. Infant SSRs shown against adult; infant not listed separately.</td></tr>
+                    <tr><td><code>*SD</code></td><td>Staff details. Collapsed if staff PNR with staff info.</td></tr>
+                    <tr><td><code>*AP</code></td><td>APIS Info. Collapsed if any pax has document number in APIS (1, 2, or 3).</td></tr>
+                    <tr><td><code>*CM</code></td><td>Comments. Collapsed if at least 1 PNR-level comment (not SSR comment).</td></tr>
+                    <tr><td><code>*FB</code></td><td>Fare basis. Segment–passenger level.</td></tr>
+                    <tr><td><code>*R</code></td><td>Redisplay PNR. Use anytime after L*n, L*&lt;serial&gt;, or *pnr.</td></tr>
+                    <tr><td><code>*H</code></td><td>History display.</td></tr>
+                    <tr><td><code>FE*</code></td><td>Eticket data. New screen. Shown if at least 1 ticket in PNR.</td></tr>
+                    <tr><td><code>FE*&lt;serial no&gt;</code></td><td>Specific ticket by serial. Use after FE*.</td></tr>
+                    <tr><td><code>FE*&lt;ticketnum&gt;</code></td><td>Display by ticket number directly.</td></tr>
+                    <tr><td><code>CV*</code></td><td>Charges. New screen. Per pax-segment.</td></tr>
+                    <tr><td><code>FOP*</code></td><td>Payments. New screen. Shown if at least 1 FOP (regardless of payment status).</td></tr>
                 </tbody>
             </table>
         </section>
 
         <section class="card">
-            <h2>L List Entries – Main</h2>
+            <h2>L List Entries – Main (23 entries)</h2>
             <table class="ref-table" id="mainEntries">
                 <thead>
                     <tr><th>#</th><th>Entry</th><th>Description</th></tr>
@@ -62,14 +72,14 @@
                     <tr><td>4</td><td><code>LBAFZ1687/02JAN/ZNZ</code></td><td>All booked pax with offpoint ZNZ</td></tr>
                     <tr><td>5</td><td><code>LBAFZ046Y23DEC</code></td><td>By compartment and specific class</td></tr>
                     <tr><td>6</td><td><code>LBAFZ746Y$E27JAN</code></td><td>By specific RBD</td></tr>
-                    <tr><td>7</td><td><code>LBAFZ746/27JAN*ERVIOLA</code></td><td>Names matching ERVIOLA</td></tr>
-                    <tr><td>8</td><td><code>LDT27JANTIADXB*ERMAL</code></td><td>Search ERMAL on TIADXB on given date</td></tr>
-                    <tr><td>9</td><td><code>LDT27FEBDOHDXB/3*ABDULLA</code></td><td>Search on TIADXB +3 days</td></tr>
+                    <tr><td>7</td><td><code>LBAFZ746/27JAN*ERVIOLA</code></td><td>Names matching word (e.g. ERVIOLA)</td></tr>
+                    <tr><td>8</td><td><code>LDT27JANTIADXB*ERMAL</code></td><td>Search name on route/date (e.g. ERMAL on TIADXB)</td></tr>
+                    <tr><td>9</td><td><code>LDT27FEBDOHDXB/3*ABDULLA</code></td><td>Search name on route +3 days</td></tr>
                     <tr><td>10</td><td><code>LNAFZ746/27JAN</code></td><td>Subload listings</td></tr>
                     <tr><td>11</td><td><code>LGAFZ1781/20JAN</code></td><td>Group bookings</td></tr>
                     <tr><td>12</td><td><code>LBXFZ045/03MAY23</code></td><td>Cancelled passengers</td></tr>
                     <tr><td>13</td><td><code>LBXFZ1750/01JAN/SO1L</code></td><td>Cancelled pax sorted by cancelled date</td></tr>
-                    <tr><td>14</td><td><code>LSAFZ540/17DEC22</code></td><td>Booked pax reported as no-shows</td></tr>
+                    <tr><td>14</td><td><code>LSAFZ540/17DEC22</code></td><td>Booked pax reported as no show</td></tr>
                     <tr><td>15</td><td><code>LBAFZ746/27JAN/GO1J</code></td><td>Codeshare PNRs</td></tr>
                     <tr><td>16</td><td><code>LBIFZ1687/02JAN</code></td><td>PNRs on flight with inbound connections</td></tr>
                     <tr><td>17</td><td><code>LBOFZ1750/01JAN</code></td><td>PNRs on flight with outbound connections</td></tr>
@@ -78,44 +88,87 @@
                     <tr><td>20</td><td><code>LBAFZ1750/01JAN23/GSKY</code></td><td>Default Skywards filter (with number)</td></tr>
                     <tr><td>21</td><td><code>LBAFZ746/27JAN/GS9SBAGL</code></td><td>Pax with particular SSR (max 3 SSRs)</td></tr>
                     <tr><td>22</td><td><code>LBAFZ1687/02JAN/GO1T</code></td><td>PNRs with all time limits</td></tr>
-                    <tr><td>23</td><td><code>LBXFZ046/23DEC/SO1L</code></td><td>Sort by last booked / last cancelled (LBA & LBX)</td></tr>
+                    <tr><td>23</td><td><code>LBXFZ046/23DEC/SO1L</code></td><td>Follow-up: sort by last booked / last cancelled (for LBA & LBX)</td></tr>
                 </tbody>
             </table>
         </section>
 
         <section class="card">
-            <h2>L List – Follow-up Entries</h2>
+            <h2>L List – Date Follow-up Entries</h2>
             <p class="section-desc">Use after displaying a list. Max ±3 days for date change.</p>
             <table class="ref-table">
                 <thead>
                     <tr><th>Entry</th><th>Description</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td><code>LB|</code></td><td>Next day</td></tr>
+                    <tr><td><code>LB|</code></td><td>Next day (+1)</td></tr>
                     <tr><td><code>LB|2</code></td><td>+2 days</td></tr>
-                    <tr><td><code>LB-</code></td><td>Previous day</td></tr>
+                    <tr><td><code>LB|3</code></td><td>+3 days (max)</td></tr>
+                    <tr><td><code>LB-</code></td><td>Previous day (-1)</td></tr>
                     <tr><td><code>LB-2</code></td><td>-2 days</td></tr>
+                    <tr><td><code>LB-3</code></td><td>-3 days (max)</td></tr>
                 </tbody>
             </table>
         </section>
 
         <section class="card">
-            <h2>L Follow-up – PNR Selection</h2>
+            <h2>L Follow-up – PNR Selection from List</h2>
+            <p class="section-desc"><strong>Example:</strong> Enter LBAFZ001J10JAN (10 names). Enter L*4 → PNR on line 4 displays. Enter L*N → next PNR (line 5). Enter L** → back to name list.</p>
             <table class="ref-table">
                 <thead>
                     <tr><th>Entry</th><th>Description</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td><code>L*&lt;serial no&gt;</code></td><td>Retrieve PNR at that line (e.g. L*4)</td></tr>
-                    <tr><td><code>L*N</code></td><td>Display next PNR in list</td></tr>
-                    <tr><td><code>L**</code></td><td>Back to name list</td></tr>
+                    <tr><td><code>L*&lt;serial no&gt;</code></td><td>Retrieve PNR at that line (e.g. L*4). Triggers internal *&lt;pnr&gt;.</td></tr>
+                    <tr><td><code>L*N</code></td><td>Display next PNR in list (from L*&lt;serial&gt; or L*n).</td></tr>
+                    <tr><td><code>L**</code></td><td>Back to name list. List shows all pax per last L criteria.</td></tr>
                 </tbody>
             </table>
-            <p class="note">Invalid serial → "INVALID SEQUENCE NUMBER"</p>
+            <p class="note"><strong>Errors:</strong> Invalid serial → "INVALID SEQUENCE NUMBER". Unsupported entry → generic error.</p>
+        </section>
+
+        <section class="card">
+            <h2>HELP Command</h2>
+            <p class="section-desc">Type <code>HELP</code> and <code>/</code> followed by your entry for more information.</p>
+            <table class="ref-table">
+                <thead>
+                    <tr><th>Examples</th><th>Use</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>HELP/VFF</code></td><td>VFF entry details</td></tr>
+                    <tr><td><code>HELP/LBA</code></td><td>List booked (LBA) entries</td></tr>
+                    <tr><td><code>HELP/LBO</code></td><td>List outbound connections</td></tr>
+                    <tr><td><code>HELP/LBI</code></td><td>List inbound connections</td></tr>
+                    <tr><td><code>HELP/LBX</code></td><td>Cancelled passengers</td></tr>
+                    <tr><td><code>HELP/LSA</code></td><td>No show listings</td></tr>
+                    <tr><td><code>HELP/LNA</code></td><td>Subload listings</td></tr>
+                    <tr><td><code>HELP/LGA</code></td><td>Group bookings</td></tr>
+                    <tr><td><code>HELP/A</code></td><td>General help</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Quick Reference – Entry Prefixes</h2>
+            <table class="ref-table">
+                <thead>
+                    <tr><th>Prefix</th><th>Meaning</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>LBA</code></td><td>List booked passengers</td></tr>
+                    <tr><td><code>LBX</code></td><td>Cancelled</td></tr>
+                    <tr><td><code>LBI</code></td><td>Inbound connections</td></tr>
+                    <tr><td><code>LBO</code></td><td>Outbound connections</td></tr>
+                    <tr><td><code>LSA</code></td><td>No show</td></tr>
+                    <tr><td><code>LNA</code></td><td>Subload</td></tr>
+                    <tr><td><code>LGA</code></td><td>Group</td></tr>
+                    <tr><td><code>LDT</code></td><td>Search by date/route/name</td></tr>
+                </tbody>
+            </table>
         </section>
 
         <footer>
-            <p>© flydubai Contact Center · RezGui Reference · Internal Use</p>
+            <p>© Created by <strong>Kenan Alhennawi</strong> 2026</p>
         </footer>
     </div>
     <script src="script.js"></script>
