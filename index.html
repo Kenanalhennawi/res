@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RezGui Entries – flydubai Contact Center</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23F6881F'/><text x='50' y='50' font-size='50' text-anchor='middle' dy='.35em' fill='white'>✈</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div class="container">
+        <header>
+            <h1>RezGui <span class="highlight">Entries</span></h1>
+            <p class="subtitle">flydubai PSS Reservation GUI – Quick Reference</p>
+            <p class="help-note">Type <code>HELP/&lt;entry&gt;</code> for details (e.g. HELP/VFF, HELP/LBA, HELP/LBO)</p>
+        </header>
+
+        <div class="search-wrap">
+            <input type="text" id="searchInput" placeholder="Search entries or descriptions..." autocomplete="off">
+        </div>
+
+        <section class="card">
+            <h2>PNR Display</h2>
+            <p class="section-desc"><strong>*&lt;PNR&gt;</strong> – Retrieve PNR and display full itinerary. Works for GDS FZ Prime and Holiday PNRs.</p>
+            <table class="ref-table">
+                <thead>
+                    <tr><th>Entry</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>*ALL</code></td><td>Expand all sections (except Eticket, Charges, Payments)</td></tr>
+                    <tr><td><code>*AI</code></td><td>Travel Agency (expand collapsed)</td></tr>
+                    <tr><td><code>*MM</code></td><td>Frequent Flyer</td></tr>
+                    <tr><td><code>*SN</code></td><td>Special Name Requirement (contact, child/infant)</td></tr>
+                    <tr><td><code>*ST</code></td><td>Seat Data</td></tr>
+                    <tr><td><code>*SI</code></td><td>Services (SSRs)</td></tr>
+                    <tr><td><code>*SD</code></td><td>Staff details</td></tr>
+                    <tr><td><code>*AP</code></td><td>APIS Info</td></tr>
+                    <tr><td><code>*CM</code></td><td>Comments</td></tr>
+                    <tr><td><code>*FB</code></td><td>Fare basis (segment–passenger level)</td></tr>
+                    <tr><td><code>*R</code></td><td>Redisplay PNR</td></tr>
+                    <tr><td><code>*H</code></td><td>History display</td></tr>
+                    <tr><td><code>FE*</code></td><td>Eticket data (new screen)</td></tr>
+                    <tr><td><code>FE*&lt;serial no&gt;</code></td><td>Specific ticket by serial (after FE*)</td></tr>
+                    <tr><td><code>FE*&lt;ticketnum&gt;</code></td><td>Display by ticket number</td></tr>
+                    <tr><td><code>CV*</code></td><td>Charges (per pax-segment)</td></tr>
+                    <tr><td><code>FOP*</code></td><td>Payments</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>L List Entries – Main</h2>
+            <table class="ref-table" id="mainEntries">
+                <thead>
+                    <tr><th>#</th><th>Entry</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td><code>LBAFZ046/23DEC</code></td><td>List of booked passengers, all classes</td></tr>
+                    <tr><td>2</td><td><code>LBAFZ1687/02JANDXB</code></td><td>All booked pax boarding in DXB</td></tr>
+                    <tr><td>3</td><td><code>LBAFZ1687/02JANDXB/DAR</code></td><td>Booked pax with board point DXB and off point DAR only</td></tr>
+                    <tr><td>4</td><td><code>LBAFZ1687/02JAN/ZNZ</code></td><td>All booked pax with offpoint ZNZ</td></tr>
+                    <tr><td>5</td><td><code>LBAFZ046Y23DEC</code></td><td>By compartment and specific class</td></tr>
+                    <tr><td>6</td><td><code>LBAFZ746Y$E27JAN</code></td><td>By specific RBD</td></tr>
+                    <tr><td>7</td><td><code>LBAFZ746/27JAN*ERVIOLA</code></td><td>Names matching ERVIOLA</td></tr>
+                    <tr><td>8</td><td><code>LDT27JANTIADXB*ERMAL</code></td><td>Search ERMAL on TIADXB on given date</td></tr>
+                    <tr><td>9</td><td><code>LDT27FEBDOHDXB/3*ABDULLA</code></td><td>Search on TIADXB +3 days</td></tr>
+                    <tr><td>10</td><td><code>LNAFZ746/27JAN</code></td><td>Subload listings</td></tr>
+                    <tr><td>11</td><td><code>LGAFZ1781/20JAN</code></td><td>Group bookings</td></tr>
+                    <tr><td>12</td><td><code>LBXFZ045/03MAY23</code></td><td>Cancelled passengers</td></tr>
+                    <tr><td>13</td><td><code>LBXFZ1750/01JAN/SO1L</code></td><td>Cancelled pax sorted by cancelled date</td></tr>
+                    <tr><td>14</td><td><code>LSAFZ540/17DEC22</code></td><td>Booked pax reported as no-shows</td></tr>
+                    <tr><td>15</td><td><code>LBAFZ746/27JAN/GO1J</code></td><td>Codeshare PNRs</td></tr>
+                    <tr><td>16</td><td><code>LBIFZ1687/02JAN</code></td><td>PNRs on flight with inbound connections</td></tr>
+                    <tr><td>17</td><td><code>LBOFZ1750/01JAN</code></td><td>PNRs on flight with outbound connections</td></tr>
+                    <tr><td>18</td><td><code>LBAFZ707/18JAN/NEGO</code></td><td>Nego blocks including link PNRs</td></tr>
+                    <tr><td>19</td><td><code>LBAFZ1687/02JAN-GDS</code></td><td>Bookings by channel</td></tr>
+                    <tr><td>20</td><td><code>LBAFZ1750/01JAN23/GSKY</code></td><td>Default Skywards filter (with number)</td></tr>
+                    <tr><td>21</td><td><code>LBAFZ746/27JAN/GS9SBAGL</code></td><td>Pax with particular SSR (max 3 SSRs)</td></tr>
+                    <tr><td>22</td><td><code>LBAFZ1687/02JAN/GO1T</code></td><td>PNRs with all time limits</td></tr>
+                    <tr><td>23</td><td><code>LBXFZ046/23DEC/SO1L</code></td><td>Sort by last booked / last cancelled (LBA & LBX)</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>L List – Follow-up Entries</h2>
+            <p class="section-desc">Use after displaying a list. Max ±3 days for date change.</p>
+            <table class="ref-table">
+                <thead>
+                    <tr><th>Entry</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>LB|</code></td><td>Next day</td></tr>
+                    <tr><td><code>LB|2</code></td><td>+2 days</td></tr>
+                    <tr><td><code>LB-</code></td><td>Previous day</td></tr>
+                    <tr><td><code>LB-2</code></td><td>-2 days</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>L Follow-up – PNR Selection</h2>
+            <table class="ref-table">
+                <thead>
+                    <tr><th>Entry</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>L*&lt;serial no&gt;</code></td><td>Retrieve PNR at that line (e.g. L*4)</td></tr>
+                    <tr><td><code>L*N</code></td><td>Display next PNR in list</td></tr>
+                    <tr><td><code>L**</code></td><td>Back to name list</td></tr>
+                </tbody>
+            </table>
+            <p class="note">Invalid serial → "INVALID SEQUENCE NUMBER"</p>
+        </section>
+
+        <footer>
+            <p>© flydubai Contact Center · RezGui Reference · Internal Use</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
