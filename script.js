@@ -1,15 +1,21 @@
 /**
  * RezGui Entries - flydubai Contact Center Reference
- * Content shown only when user searches
+ * Introduction & PNR Retrieve always visible; rest shown on search
  */
 document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('searchInput');
+    const clearBtn = document.getElementById('clearBtn');
     const contentArea = document.getElementById('contentArea');
     const searchHint = document.getElementById('searchHint');
-    const cards = document.querySelectorAll('.card');
+    const cards = document.querySelectorAll('#contentArea .card');
+
+    function updateClearBtn() {
+        if (clearBtn) clearBtn.classList.toggle('hidden', !(searchInput && searchInput.value.trim()));
+    }
 
     function filterEntries() {
         const q = (searchInput && searchInput.value || '').trim().toLowerCase();
+        updateClearBtn();
 
         if (!q) {
             contentArea.classList.add('hidden');
@@ -39,4 +45,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (searchInput) searchInput.addEventListener('input', filterEntries);
+    if (clearBtn) clearBtn.onclick = function () {
+        if (searchInput) { searchInput.value = ''; searchInput.focus(); }
+        filterEntries();
+    };
 });
