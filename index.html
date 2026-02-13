@@ -18,22 +18,23 @@
 
         <div class="search-wrap">
             <input type="text" id="searchInput" placeholder="Search entries or descriptions..." autocomplete="off">
+            <button type="button" id="clearBtn" class="clear-btn hidden" aria-label="Clear search">×</button>
         </div>
 
-        <div id="searchHint" class="search-hint">Search to find RezGui entries</div>
-
-        <div id="contentArea" class="hidden">
-        <section class="card">
+        <section class="card card-always">
             <h2>Introduction</h2>
             <p class="section-desc">RezGui extends FZ schedules and PNR list display for Senior Commercial Management. Use cryptic entries to retrieve PNRs and lists. Supports GDS FZ Prime, Holiday PNRs, Codeshare, OTA, and Direct channel bookings.</p>
         </section>
 
-        <section class="card">
+        <section class="card card-always">
             <h2>PNR Display – Retrieve</h2>
             <p class="section-desc"><strong>*&lt;PNR&gt;</strong> – Retrieve PNR and display complete itinerary with applicable follow-up entries. Works for GDS FZ Prime and Holiday PNRs.</p>
             <p class="section-desc"><strong>PNR Header</strong> shows: Confirmation Number, Channel. Time Limit shown only if PNR has balance due.</p>
         </section>
 
+        <div id="searchHint" class="search-hint">Search to find more RezGui entries</div>
+
+        <div id="contentArea" class="hidden">
         <section class="card">
             <h2>PNR Display – Follow-up Entries</h2>
             <table class="ref-table">
