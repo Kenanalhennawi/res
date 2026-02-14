@@ -150,7 +150,7 @@
                     <tr><td><code>HELP/LNA</code></td><td>Subload listings</td></tr>
                     <tr><td><code>HELP/LGA</code></td><td>Group bookings</td></tr>
                     <tr><td><code>HELP/LDT</code></td><td>Search by date/route/name</td></tr>
-                    <tr><td><code>HELP/A</code></td><td>General help</td></tr>
+                    <tr><td><code>HELP/A</code></td><td>Availability display entries</td></tr>
                 </tbody>
             </table>
         </section>
@@ -162,7 +162,7 @@
                     <tr><th>Prefix</th><th>Meaning</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td><code>LBA</code></td><td>List booked passengers</td></tr>
+                    <tr><td><code>LBA</code></td><td>List booked passengers (Special Name Lists)</td></tr>
                     <tr><td><code>LBX</code></td><td>Cancelled</td></tr>
                     <tr><td><code>LBI</code></td><td>Inbound connections</td></tr>
                     <tr><td><code>LBO</code></td><td>Outbound connections</td></tr>
@@ -170,6 +170,55 @@
                     <tr><td><code>LNA</code></td><td>Subload</td></tr>
                     <tr><td><code>LGA</code></td><td>Group</td></tr>
                     <tr><td><code>LDT</code></td><td>Search by date/route/name</td></tr>
+                    <tr><td><code>A</code></td><td>Availability display</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>HELP/LBA – Special Name Lists Entries</h2>
+            <p class="section-desc">Official LBA entries from RezGui. Use <code>HELP/LBA</code> in RezGui for full details.</p>
+            <table class="ref-table">
+                <thead>
+                    <tr><th>Entry</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>LBAFZ746/27JAN</code></td><td>List of booked passengers, all classes</td></tr>
+                    <tr><td><code>LBAFZ053/20MAR/GO1T</code></td><td>List of PNRs with all time limits</td></tr>
+                    <tr><td><code>LBAFZ1681/02MAR/GO1J</code></td><td>List of codeshare PNR</td></tr>
+                    <tr><td><code>LBAFZ711/22JAN/GSKY</code></td><td>Default Skywards filter (with number and tier status)</td></tr>
+                    <tr><td><code>LBAFZ711/22JAN/GS9SBAGL</code></td><td>List of booked passengers in a flight with a particular SSR (all SSRs supported)</td></tr>
+                    <tr><td><code>LBAFZ707/18JAN/NEGO</code></td><td>List of nego blocks</td></tr>
+                    <tr><td><code>LBAFZ1681/02MAR-GDS</code></td><td>Display bookings by channel (new)</td></tr>
+                    <tr><td><code>LBAFZ711/22JAN*PATEL</code></td><td>Names starting with PAT.. e.g. 2PATEL/A/B</td></tr>
+                    <tr><td><code>LBAFZ746/27JAN/SO1L</code></td><td>Follow-up entry to sort by last booked for LBA entries</td></tr>
+                    <tr><td><code>LBAFZ746Y$E27JAN</code></td><td>By compartment and specific class</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>HELP/A – Availability Display Entries</h2>
+            <p class="section-desc">Availability display commands. Use <code>HELP/A</code> in RezGui for full details.</p>
+            <table class="ref-table">
+                <thead>
+                    <tr><th>Entry</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>A 10JUL DXBMCT</code></td><td>Availability DXB–MCT on 10 July</td></tr>
+                    <tr><td><code>A DXBBAH</code></td><td>Availability same day DXB–BAH</td></tr>
+                    <tr><td><code>A| DXBKWI</code></td><td>Availability 1 day later DXB–KWI</td></tr>
+                    <tr><td><code>A.TH KHIDXB</code></td><td>Availability next Thursday (.MO .TU .WE .TH .FR .SA .SU)</td></tr>
+                    <tr><td><code>A 18OCT DXBRGN|</code></td><td>Flights to specific airport RGN only</td></tr>
+                    <tr><td><code>A 18OCT KBV|DXB</code></td><td>Flights from a specific airport KBV only</td></tr>
+                    <tr><td><code>A.D</code></td><td>Selects direct flights only</td></tr>
+                    <tr><td><code>A.PZU</code></td><td>Connection via PZU</td></tr>
+                    <tr><td><code>A@C</code></td><td>Requests flights with C class which have a minimum of 1 seat available</td></tr>
+                    <tr><td><code>A24JUL</code></td><td>Date change to 24 July</td></tr>
+                    <tr><td><code>A24MAR|10</code></td><td>10 days after 24MAR</td></tr>
+                    <tr><td><code>AR26APR</code></td><td>Return with alternative date</td></tr>
+                    <tr><td><code>A@S|</code></td><td>Request flight with S class which have min 1 seat available for next day from main availability display</td></tr>
+                    <tr><td><code>A@S-</code></td><td>Request flight with S class which have min 1 seat available for previous day from main availability display</td></tr>
                 </tbody>
             </table>
         </section>
