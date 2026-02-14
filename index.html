@@ -17,8 +17,20 @@
         </header>
 
         <div class="search-wrap">
-            <input type="text" id="searchInput" placeholder="Search entries or descriptions..." autocomplete="off">
+            <input type="text" id="searchInput" placeholder="Try: HELP/LBA, HELP/A, or search..." autocomplete="off">
             <button type="button" id="clearBtn" class="clear-btn hidden" aria-label="Clear search">×</button>
+        </div>
+        <div class="help-shortcuts">
+            <span class="shortcut-label">Quick:</span>
+            <button type="button" class="help-chip" data-search="HELP/LBA">HELP/LBA</button>
+            <button type="button" class="help-chip" data-search="HELP/LBO">HELP/LBO</button>
+            <button type="button" class="help-chip" data-search="HELP/LBI">HELP/LBI</button>
+            <button type="button" class="help-chip" data-search="HELP/LBX">HELP/LBX</button>
+            <button type="button" class="help-chip" data-search="HELP/LSA">HELP/LSA</button>
+            <button type="button" class="help-chip" data-search="HELP/LNA">HELP/LNA</button>
+            <button type="button" class="help-chip" data-search="HELP/LGA">HELP/LGA</button>
+            <button type="button" class="help-chip" data-search="HELP/LDT">HELP/LDT</button>
+            <button type="button" class="help-chip" data-search="HELP/A">HELP/A</button>
         </div>
 
         <section class="card card-always">
@@ -177,7 +189,9 @@
 
         <section class="card">
             <h2>HELP/LBA – Special Name Lists Entries</h2>
-            <p class="section-desc">Official LBA entries from RezGui. Use <code>HELP/LBA</code> in RezGui for full details.</p>
+            <p class="section-desc">Type <code>HELP/LBA</code> in RezGui for full details. Format: <code>LBAFZ&lt;flight&gt;/&lt;date&gt;</code> + optional filters.</p>
+
+            <h3 class="card-subtitle">Entries List</h3>
             <table class="ref-table">
                 <thead>
                     <tr><th>Entry</th><th>Description</th></tr>
@@ -193,6 +207,25 @@
                     <tr><td><code>LBAFZ711/22JAN*PATEL</code></td><td>Names starting with PAT.. e.g. 2PATEL/A/B</td></tr>
                     <tr><td><code>LBAFZ746/27JAN/SO1L</code></td><td>Follow-up entry to sort by last booked for LBA entries</td></tr>
                     <tr><td><code>LBAFZ746Y$E27JAN</code></td><td>By compartment and specific class</td></tr>
+                </tbody>
+            </table>
+
+            <h3 class="card-subtitle">Examples to Use</h3>
+            <table class="ref-table">
+                <thead>
+                    <tr><th>Example</th><th>What it does</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>LBAFZ046/23DEC</code></td><td>All booked pax on FZ046, 23 Dec, all classes</td></tr>
+                    <tr><td><code>LBAFZ1687/02JANDXB</code></td><td>All booked pax boarding in DXB</td></tr>
+                    <tr><td><code>LBAFZ1687/02JANDXB/DAR</code></td><td>Booked pax board DXB, off DAR only</td></tr>
+                    <tr><td><code>LBAFZ1687/02JAN/ZNZ</code></td><td>All booked pax with offpoint ZNZ</td></tr>
+                    <tr><td><code>LBAFZ046Y23DEC</code></td><td>By compartment Y and specific class</td></tr>
+                    <tr><td><code>LBAFZ746Y$E27JAN</code></td><td>By specific RBD (e.g. $E)</td></tr>
+                    <tr><td><code>LBAFZ746/27JAN*ERVIOLA</code></td><td>Names matching ERVIOLA</td></tr>
+                    <tr><td><code>LBAFZ746/27JAN/GO1J</code></td><td>Codeshare PNRs only</td></tr>
+                    <tr><td><code>LBAFZ1687/02JAN-GDS</code></td><td>Bookings by GDS channel</td></tr>
+                    <tr><td><code>LBAFZ746/27JAN/SO1L</code></td><td>Sort by last booked</td></tr>
                 </tbody>
             </table>
         </section>
@@ -219,6 +252,99 @@
                     <tr><td><code>AR26APR</code></td><td>Return with alternative date</td></tr>
                     <tr><td><code>A@S|</code></td><td>Request flight with S class which have min 1 seat available for next day from main availability display</td></tr>
                     <tr><td><code>A@S-</code></td><td>Request flight with S class which have min 1 seat available for previous day from main availability display</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>HELP/LBO – List Outbound Connections</h2>
+            <p class="section-desc">Type <code>HELP/LBO</code> in RezGui for full details. PNRs on flight with outbound connections.</p>
+            <h3 class="card-subtitle">Entries & Examples</h3>
+            <table class="ref-table">
+                <thead><tr><th>Entry</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td><code>LBOFZ1750/01JAN</code></td><td>PNRs on flight FZ1750, 01 Jan, with outbound connections</td></tr>
+                    <tr><td><code>LBOFZ1687/15MAR</code></td><td>PNRs on flight with onward connections from that flight</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>HELP/LBI – List Inbound Connections</h2>
+            <p class="section-desc">Type <code>HELP/LBI</code> in RezGui for full details. PNRs on flight with inbound connections.</p>
+            <h3 class="card-subtitle">Entries & Examples</h3>
+            <table class="ref-table">
+                <thead><tr><th>Entry</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td><code>LBIFZ1687/02JAN</code></td><td>PNRs on flight FZ1687, 02 Jan, with inbound connections</td></tr>
+                    <tr><td><code>LBIFZ746/27JAN</code></td><td>PNRs on flight with prior connections to that flight</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>HELP/LBX – Cancelled Passengers</h2>
+            <p class="section-desc">Type <code>HELP/LBX</code> in RezGui for full details. List cancelled passengers.</p>
+            <h3 class="card-subtitle">Entries & Examples</h3>
+            <table class="ref-table">
+                <thead><tr><th>Entry</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td><code>LBXFZ045/03MAY23</code></td><td>Cancelled passengers on FZ045, 03 May 2023</td></tr>
+                    <tr><td><code>LBXFZ1750/01JAN/SO1L</code></td><td>Cancelled pax sorted by cancelled date (last cancelled first)</td></tr>
+                    <tr><td><code>LBXFZ046/23DEC/SO1L</code></td><td>Follow-up: sort by last booked / last cancelled for LBX</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>HELP/LSA – No Show Listings</h2>
+            <p class="section-desc">Type <code>HELP/LSA</code> in RezGui for full details. Booked pax reported as no show.</p>
+            <h3 class="card-subtitle">Entries & Examples</h3>
+            <table class="ref-table">
+                <thead><tr><th>Entry</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td><code>LSAFZ540/17DEC22</code></td><td>Booked pax reported as no show on FZ540, 17 Dec 2022</td></tr>
+                    <tr><td><code>LSAFZ746/27JAN</code></td><td>No show pax on flight/date</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>HELP/LNA – Subload Listings</h2>
+            <p class="section-desc">Type <code>HELP/LNA</code> in RezGui for full details. Subload listings.</p>
+            <h3 class="card-subtitle">Entries & Examples</h3>
+            <table class="ref-table">
+                <thead><tr><th>Entry</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td><code>LNAFZ746/27JAN</code></td><td>Subload listings for FZ746, 27 Jan</td></tr>
+                    <tr><td><code>LNAFZ1687/02JAN</code></td><td>Subload listings for flight/date</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>HELP/LGA – Group Bookings</h2>
+            <p class="section-desc">Type <code>HELP/LGA</code> in RezGui for full details. List group bookings.</p>
+            <h3 class="card-subtitle">Entries & Examples</h3>
+            <table class="ref-table">
+                <thead><tr><th>Entry</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td><code>LGAFZ1781/20JAN</code></td><td>Group bookings on FZ1781, 20 Jan</td></tr>
+                    <tr><td><code>LGAFZ746/27JAN</code></td><td>Group PNRs on flight/date</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>HELP/LDT – Search by Date/Route/Name</h2>
+            <p class="section-desc">Type <code>HELP/LDT</code> in RezGui for full details. Search name on route and date.</p>
+            <h3 class="card-subtitle">Entries & Examples</h3>
+            <table class="ref-table">
+                <thead><tr><th>Entry</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td><code>LDT27JANTIADXB*ERMAL</code></td><td>Search name ERMAL on route TIADXB, 27 Jan</td></tr>
+                    <tr><td><code>LDT27FEBDOHDXB/3*ABDULLA</code></td><td>Search name ABDULLA on route DOHDXB, 27 Feb +3 days</td></tr>
+                    <tr><td><code>LDT15MARDXBBAH*SMITH</code></td><td>Search SMITH on DXB–BAH, 15 Mar</td></tr>
                 </tbody>
             </table>
         </section>
