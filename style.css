@@ -68,8 +68,48 @@ header code {
 
 .search-wrap {
     position: relative;
+    margin-bottom: 12px;
+}
+
+.help-shortcuts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
     margin-bottom: 24px;
 }
+
+.shortcut-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.help-chip {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--fz-blue);
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.help-chip:hover {
+    background: var(--fz-orange);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.card-subtitle {
+    font-size: 1rem;
+    color: var(--fz-blue);
+    margin: 20px 0 10px 0;
+    padding-bottom: 4px;
+}
+
+.card-subtitle:first-of-type { margin-top: 0; }
 
 .search-wrap input {
     width: 100%;
