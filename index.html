@@ -187,50 +187,29 @@
             </table>
         </section>
 
-        <section class="card">
+        <section class="card" data-help="HELP/LBA">
             <h2>HELP/LBA – Special Name Lists Entries</h2>
-            <p class="section-desc">Type <code>HELP/LBA</code> in RezGui for full details. Format: <code>LBAFZ&lt;flight&gt;/&lt;date&gt;</code> + optional filters.</p>
-
-            <h3 class="card-subtitle">Entries List</h3>
+            <p class="section-desc">Type <code>HELP/LBA</code> in RezGui. Official list:</p>
             <table class="ref-table">
                 <thead>
                     <tr><th>Entry</th><th>Description</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td><code>LBAFZ746/27JAN</code></td><td>List of booked passengers, all classes</td></tr>
-                    <tr><td><code>LBAFZ053/20MAR/GO1T</code></td><td>List of PNRs with all time limits</td></tr>
-                    <tr><td><code>LBAFZ1681/02MAR/GO1J</code></td><td>List of codeshare PNR</td></tr>
-                    <tr><td><code>LBAFZ711/22JAN/GSKY</code></td><td>Default Skywards filter (with number and tier status)</td></tr>
-                    <tr><td><code>LBAFZ711/22JAN/GS9SBAGL</code></td><td>List of booked passengers in a flight with a particular SSR (all SSRs supported)</td></tr>
-                    <tr><td><code>LBAFZ707/18JAN/NEGO</code></td><td>List of nego blocks</td></tr>
-                    <tr><td><code>LBAFZ1681/02MAR-GDS</code></td><td>Display bookings by channel (new)</td></tr>
-                    <tr><td><code>LBAFZ711/22JAN*PATEL</code></td><td>Names starting with PAT.. e.g. 2PATEL/A/B</td></tr>
-                    <tr><td><code>LBAFZ746/27JAN/SO1L</code></td><td>Follow-up entry to sort by last booked for LBA entries</td></tr>
-                    <tr><td><code>LBAFZ746Y$E27JAN</code></td><td>By compartment and specific class</td></tr>
-                </tbody>
-            </table>
-
-            <h3 class="card-subtitle">Examples to Use</h3>
-            <table class="ref-table">
-                <thead>
-                    <tr><th>Example</th><th>What it does</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><code>LBAFZ046/23DEC</code></td><td>All booked pax on FZ046, 23 Dec, all classes</td></tr>
-                    <tr><td><code>LBAFZ1687/02JANDXB</code></td><td>All booked pax boarding in DXB</td></tr>
-                    <tr><td><code>LBAFZ1687/02JANDXB/DAR</code></td><td>Booked pax board DXB, off DAR only</td></tr>
-                    <tr><td><code>LBAFZ1687/02JAN/ZNZ</code></td><td>All booked pax with offpoint ZNZ</td></tr>
-                    <tr><td><code>LBAFZ046Y23DEC</code></td><td>By compartment Y and specific class</td></tr>
-                    <tr><td><code>LBAFZ746Y$E27JAN</code></td><td>By specific RBD (e.g. $E)</td></tr>
-                    <tr><td><code>LBAFZ746/27JAN*ERVIOLA</code></td><td>Names matching ERVIOLA</td></tr>
-                    <tr><td><code>LBAFZ746/27JAN/GO1J</code></td><td>Codeshare PNRs only</td></tr>
-                    <tr><td><code>LBAFZ1687/02JAN-GDS</code></td><td>Bookings by GDS channel</td></tr>
-                    <tr><td><code>LBAFZ746/27JAN/SO1L</code></td><td>Sort by last booked</td></tr>
+                    <tr><td><code>LBAFZ746/27JAN</code></td><td>LIST OF BOOKED PASSENGERS ALL CLASSES</td></tr>
+                    <tr><td><code>LBAFZ053/20MAR/GO1T</code></td><td>LIST OF PNRS WITH ALL TIME LIMITS</td></tr>
+                    <tr><td><code>LBAFZ1681/02MAR/GO1J</code></td><td>LIST OF CODESHARE PNR</td></tr>
+                    <tr><td><code>LBAFZ711/22JAN/GSKY</code></td><td>DEFAULT SKYWARDS FILTER (WITH NUMBER AND TIER STATUS)</td></tr>
+                    <tr><td><code>LBAFZ711/22JAN/GS9SBAGL</code></td><td>LIST OF BOOKED PASSENGERS IN A FLIGHT WITH A PARTICULAR SSR (ALL THE SSRS ARE TO BE SUPPORTED)</td></tr>
+                    <tr><td><code>LBAFZ707/18JAN/NEGO</code></td><td>LIST OF NEGO BLOCKS</td></tr>
+                    <tr><td><code>LBAFZ1681/02MAR-GDS</code></td><td>DISPLAY BOOKINGS BY CHANNEL NEW</td></tr>
+                    <tr><td><code>LBAFZ711/22JAN*PATEL</code></td><td>NAMES STARTING WITH PAT..EG 2PATEL/A/B</td></tr>
+                    <tr><td><code>LBAFZ746/27JAN/SO1L</code></td><td>FOLLOW UP ENTRY TO SORT BY LAST BOOKED FOR LBA ENTRIES</td></tr>
+                    <tr><td><code>LBAFZ746Y$E27JAN</code></td><td>BY COMPARTMENT AND SPECIFIC CLASS</td></tr>
                 </tbody>
             </table>
         </section>
 
-        <section class="card">
+        <section class="card" data-help="HELP/A">
             <h2>HELP/A – Availability Display Entries</h2>
             <p class="section-desc">Availability display commands. Use <code>HELP/A</code> in RezGui for full details.</p>
             <table class="ref-table">
@@ -256,7 +235,7 @@
             </table>
         </section>
 
-        <section class="card">
+        <section class="card" data-help="HELP/LBO">
             <h2>HELP/LBO – List Outbound Connections</h2>
             <p class="section-desc">Type <code>HELP/LBO</code> in RezGui for full details. PNRs on flight with outbound connections.</p>
             <h3 class="card-subtitle">Entries & Examples</h3>
@@ -269,7 +248,7 @@
             </table>
         </section>
 
-        <section class="card">
+        <section class="card" data-help="HELP/LBI">
             <h2>HELP/LBI – List Inbound Connections</h2>
             <p class="section-desc">Type <code>HELP/LBI</code> in RezGui for full details. PNRs on flight with inbound connections.</p>
             <h3 class="card-subtitle">Entries & Examples</h3>
@@ -282,7 +261,7 @@
             </table>
         </section>
 
-        <section class="card">
+        <section class="card" data-help="HELP/LBX">
             <h2>HELP/LBX – Cancelled Passengers</h2>
             <p class="section-desc">Type <code>HELP/LBX</code> in RezGui for full details. List cancelled passengers.</p>
             <h3 class="card-subtitle">Entries & Examples</h3>
@@ -296,7 +275,7 @@
             </table>
         </section>
 
-        <section class="card">
+        <section class="card" data-help="HELP/LSA">
             <h2>HELP/LSA – No Show Listings</h2>
             <p class="section-desc">Type <code>HELP/LSA</code> in RezGui for full details. Booked pax reported as no show.</p>
             <h3 class="card-subtitle">Entries & Examples</h3>
@@ -309,7 +288,7 @@
             </table>
         </section>
 
-        <section class="card">
+        <section class="card" data-help="HELP/LNA">
             <h2>HELP/LNA – Subload Listings</h2>
             <p class="section-desc">Type <code>HELP/LNA</code> in RezGui for full details. Subload listings.</p>
             <h3 class="card-subtitle">Entries & Examples</h3>
@@ -322,7 +301,7 @@
             </table>
         </section>
 
-        <section class="card">
+        <section class="card" data-help="HELP/LGA">
             <h2>HELP/LGA – Group Bookings</h2>
             <p class="section-desc">Type <code>HELP/LGA</code> in RezGui for full details. List group bookings.</p>
             <h3 class="card-subtitle">Entries & Examples</h3>
@@ -335,7 +314,7 @@
             </table>
         </section>
 
-        <section class="card">
+        <section class="card" data-help="HELP/LDT">
             <h2>HELP/LDT – Search by Date/Route/Name</h2>
             <p class="section-desc">Type <code>HELP/LDT</code> in RezGui for full details. Search name on route and date.</p>
             <h3 class="card-subtitle">Entries & Examples</h3>
