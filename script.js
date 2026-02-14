@@ -13,8 +13,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (clearBtn) clearBtn.classList.toggle('hidden', !(searchInput && searchInput.value.trim()));
     }
 
+    var helpCommands = ['HELP/LBA', 'HELP/A', 'HELP/LBO', 'HELP/LBI', 'HELP/LBX', 'HELP/LSA', 'HELP/LNA', 'HELP/LGA', 'HELP/LDT'];
+
     function filterEntries() {
-        const q = (searchInput && searchInput.value || '').trim().toLowerCase();
+        const raw = (searchInput && searchInput.value || '').trim();
+        const q = raw.toLowerCase();
         updateClearBtn();
 
         if (!q) {
@@ -26,22 +29,36 @@ document.addEventListener('DOMContentLoaded', function () {
         if (searchHint) searchHint.classList.add('hidden');
         contentArea.classList.remove('hidden');
 
-        cards.forEach(function (card) {
-            const rows = card.querySelectorAll('tbody tr');
-            if (rows.length === 0) {
-                const text = card.textContent.toLowerCase();
-                card.classList.toggle('hidden', !text.includes(q));
-            } else {
-                let visibleCount = 0;
-                rows.forEach(function (row) {
-                    const text = row.textContent.toLowerCase();
-                    const match = text.includes(q);
-                    row.classList.toggle('hidden', !match);
-                    if (match) visibleCount++;
-                });
-                card.classList.toggle('hidden', visibleCount === 0);
-            }
-        });
+        var exactHelp = helpCommands.find(function (cmd) { return cmd.toLowerCase() === q; });
+
+        if (exactHelp) {
+            cards.forEach(function (card) {
+                var dataHelp = card.getAttribute('data-help');
+                if (dataHelp && dataHelp.toUpperCase() === exactHelp.toUpperCase()) {
+                    card.classList.remove('hidden');
+                    card.querySelectorAll('tbody tr').forEach(function (row) { row.classList.remove('hidden'); });
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        } else {
+            cards.forEach(function (card) {
+                const rows = card.querySelectorAll('tbody tr');
+                if (rows.length === 0) {
+                    const text = card.textContent.toLowerCase();
+                    card.classList.toggle('hidden', !text.includes(q));
+                } else {
+                    let visibleCount = 0;
+                    rows.forEach(function (row) {
+                        const text = row.textContent.toLowerCase();
+                        const match = text.includes(q);
+                        row.classList.toggle('hidden', !match);
+                        if (match) visibleCount++;
+                    });
+                    card.classList.toggle('hidden', visibleCount === 0);
+                }
+            });
+        }
     }
 
     if (searchInput) searchInput.addEventListener('input', filterEntries);
