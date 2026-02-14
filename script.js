@@ -49,4 +49,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (searchInput) { searchInput.value = ''; searchInput.focus(); }
         filterEntries();
     };
+
+    document.querySelectorAll('.help-chip').forEach(function (btn) {
+        btn.onclick = function () {
+            var q = btn.getAttribute('data-search') || '';
+            if (searchInput) { searchInput.value = q; searchInput.focus(); }
+            filterEntries();
+        };
+    });
 });
